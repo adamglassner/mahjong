@@ -22,10 +22,10 @@ type hit struct {
 }
 
 type fly struct {
-	face           int
-	x, y, tx, ty   float64 // device px: start and meeting point
-	t              float64
-	burst          bool
+	face         int
+	x, y, tx, ty float64 // device px: start and meeting point
+	t            float64
+	burst        bool
 }
 
 type particle struct {
@@ -50,20 +50,25 @@ type App struct {
 	modal  string // "", puzzles, settings, rules, win, stuck, confirm, update
 	conf   confirmInfo
 
-	sel              int
-	hint             [2]int
-	hintT            float64
-	shakeI           int
-	shakeT           float64
-	flies            []fly
-	parts            []particle
-	pops             map[int]float64
-	streak           int
-	sinceMatch       float64
-	shuffleT         float64
-	pendingWin       float64 // countdown until the win dialog
-	pendingStuck     float64
-	win              struct{ stars int; time float64; best bool; name string }
+	sel          int
+	hint         [2]int
+	hintT        float64
+	shakeI       int
+	shakeT       float64
+	flies        []fly
+	parts        []particle
+	pops         map[int]float64
+	streak       int
+	sinceMatch   float64
+	shuffleT     float64
+	pendingWin   float64 // countdown until the win dialog
+	pendingStuck float64
+	win          struct {
+		stars int
+		time  float64
+		best  bool
+		name  string
+	}
 	saveT            float64
 	toast            string
 	toastT           float64

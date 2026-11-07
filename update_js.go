@@ -20,4 +20,4 @@ func newUpdater() *Updater            { return &Updater{st: UpdState{State: "idl
 func (u *Updater) snapshot() UpdState { return u.st }
 func (u *Updater) Check(manual bool)  {}
 func (u *Updater) Apply()             {}
-func cleanupOldUpdate() {}
+func cleanupOldUpdate()               {}

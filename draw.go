@@ -235,11 +235,17 @@ type LP struct {
 	p vector.Path
 }
 
-func (c *Cv) Path() *LP                         { return &LP{c: c} }
-func (l *LP) M(x, y float64) *LP                { l.p.MoveTo(l.c.X(x), l.c.Y(y)); return l }
-func (l *LP) L(x, y float64) *LP                { l.p.LineTo(l.c.X(x), l.c.Y(y)); return l }
-func (l *LP) Q(cx, cy, x, y float64) *LP        { l.p.QuadTo(l.c.X(cx), l.c.Y(cy), l.c.X(x), l.c.Y(y)); return l }
-func (l *LP) C(a, b, cc, d, x, y float64) *LP   { l.p.CubicTo(l.c.X(a), l.c.Y(b), l.c.X(cc), l.c.Y(d), l.c.X(x), l.c.Y(y)); return l }
+func (c *Cv) Path() *LP          { return &LP{c: c} }
+func (l *LP) M(x, y float64) *LP { l.p.MoveTo(l.c.X(x), l.c.Y(y)); return l }
+func (l *LP) L(x, y float64) *LP { l.p.LineTo(l.c.X(x), l.c.Y(y)); return l }
+func (l *LP) Q(cx, cy, x, y float64) *LP {
+	l.p.QuadTo(l.c.X(cx), l.c.Y(cy), l.c.X(x), l.c.Y(y))
+	return l
+}
+func (l *LP) C(a, b, cc, d, x, y float64) *LP {
+	l.p.CubicTo(l.c.X(a), l.c.Y(b), l.c.X(cc), l.c.Y(d), l.c.X(x), l.c.Y(y))
+	return l
+}
 func (l *LP) Z() *LP                            { l.p.Close(); return l }
 func (l *LP) Fill(col color.NRGBA)              { fillPath(l.c.dst, &l.p, col, col, 0, 1) }
 func (l *LP) Stroke(w float64, col color.NRGBA) { strokePath(l.c.dst, &l.p, l.c.L(w), col) }
