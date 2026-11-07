@@ -1,0 +1,13 @@
+Mahjong - Jade Moon Garden  v@VERSION@
+(c) 2026 Ironite. All rights reserved.
+
+Game design, programming, tile art, scenes and music: Ironite.
+All graphics are drawn by the game itself; the music and sound effects are
+played live by its own synthesizer.
+
+Made with Ebitengine (Apache License 2.0) and the Go programming language.
+
+Fonts (SIL Open Font License 1.1, see OFL.txt):
+  Young Serif by Bastien Sozeau
+  Work Sans by Wei Huang
+  Noto Serif CJK (tile characters) by Adobe and Google
