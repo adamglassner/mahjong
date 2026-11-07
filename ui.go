@@ -917,6 +917,9 @@ func (a *App) drawTitle(c *Cv) {
 	a.drawBigTile(c, KDragon, cx, 150, 118, 0)
 	c.TextShadow("Mahjong", cx, 350, 104, FTitle, cGold, rgba(0x000000, .7), 4, AlignCenter)
 	c.TextShadow("Jade Moon Garden", cx, 400, 30, FItalic, cPaper, rgba(0x000000, .7), 2, AlignCenter)
+	if a.screen == "cover" { // the browser build's cover-art mode: just the title
+		return
+	}
 	y := 448.0
 	w := 420.0
 	if a.pl != nil && !a.pl.Won {
